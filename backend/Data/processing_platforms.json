@@ -1,0 +1,110 @@
+{
+    "vehicle": {
+        "cpu": {
+            "name": "INTEL_I7",
+            "peak_flops": 1e9,
+            "processing_frequency": 2.26e9,
+            "processing_units": 8,
+            "ram_size": 8e9,
+            "memory_size": 16e9,
+            "memory_bandwidth": 137e9,
+            "memory_cache": 4e6,
+            "power_efficiency": 0.5,
+            "ISA": "ARMv8.2"
+        },
+        "gpu": {
+            "name": "NANO",
+            "peak_flops": 10e12,
+            "processing_frequency": 1.37e9,
+            "processing_units": 512,
+            "ram_size": 8e9,
+            "memory_size": 4e9,
+            "memory_bandwidth": 137e9,
+            "memory_cache": 8e6,
+            "power_efficiency": 0.7
+        }
+    },
+    "edge": {
+        "cpu": {
+            "name": "INTEL_I7",
+            "peak_flops": 4e9,
+            "processing_frequency": 2.2e9,
+            "processing_units": 16,
+            "ram_size": 8e9,
+            "memory_size": 64e9,
+            "memory_bandwidth": 102e9,
+            "memory_cache": 8e6,
+            "power_efficiency": 0.6,
+            "ISA": "x86-64"
+        },
+        "gpu1": {
+            "name": "NANO",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 4e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 40e6,
+            "power_efficiency": 0.75
+        },
+        "gpu2": {
+            "name": "TX2",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 8e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 40e6,
+            "power_efficiency": 0.75
+        }
+    },
+    "cloud": {
+        "cpu": {
+            "name": "INTEL_I7",
+            "peak_flops": 6e9,
+            "processing_frequency": 2.7e9,
+            "processing_units": 28,
+            "ram_size": 8e9,
+            "memory_size": 256e9,
+            "memory_bandwidth": 140e9,
+            "memory_cache": 38e6,
+            "power_efficiency": 0.55,
+            "ISA": "x86-64"
+        },
+        "gpu1": {
+            "name": "NANO",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 4e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 40e6,
+            "power_efficiency": 0.75
+        },
+        "gpu2": {
+            "name": "TX2",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 8e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 8e6,
+            "power_efficiency": 0.75
+        },
+        "gpu3": {
+            "name": "AGX",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 16e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 40e6,
+            "power_efficiency": 0.75
+        }
+    }
+}

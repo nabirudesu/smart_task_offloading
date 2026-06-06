@@ -1,0 +1,1028 @@
+default_executions :dict = {
+    "DO": [
+        # Vehicle: 1 model (SSD-MobileNetV3), 2 platforms (NANO, INTEL_I7)
+        {
+            "model_name_id": "SSD-MobileNetV3",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.711,
+            "execution_time": 0.041,
+            "power_consumption": 6.5,
+            "memory_consumption": 100,
+            "utilization_percentage": 0.015,
+            "niveau_id": "V"
+        },
+        {
+            "model_name_id": "SSD-MobileNetV3",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.681,
+            "execution_time": 0.018,
+            "power_consumption": 18.6,
+            "memory_consumption": 150,
+            "utilization_percentage": 0.008,
+            "niveau_id": "V"
+        },
+        # Edge: 2 models (YOLOv5m, SSD-EfficientNet), 3 platforms (NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "YOLOv5m",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.88,
+            "execution_time": 0.12,
+            "power_consumption": 8.0,
+            "memory_consumption": 1280,
+            "utilization_percentage": 0.55,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "YOLOv5m",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.90,
+            "execution_time": 0.045,
+            "power_consumption": 10.5,
+            "memory_consumption": 1485,
+            "utilization_percentage": 0.30,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "YOLOv5m",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.893,
+            "execution_time": 0.022,
+            "power_consumption": 21.4,
+            "memory_consumption": 1126,
+            "utilization_percentage": 0.115,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-EfficientNet",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.738,
+            "execution_time": 0.058,
+            "power_consumption": 7.8,
+            "memory_consumption": 921,
+            "utilization_percentage": 0.112,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-EfficientNet",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.847,
+            "execution_time": 0.038,
+            "power_consumption": 10.2,
+            "memory_consumption": 1177,
+            "utilization_percentage": 0.15,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-EfficientNet",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.78,
+            "execution_time": 0.025,
+            "power_consumption": 23.4,
+            "memory_consumption": 890,
+            "utilization_percentage": 0.070,
+            "niveau_id": "E"
+        },
+        # Cloud: 3 models (YOLOv4, Mask R-CNN, DETR), 4 platforms (AGX, NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "YOLOv4",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.942,
+            "execution_time": 0.025,
+            "power_consumption": 20.7,
+            "memory_consumption": 2560,
+            "utilization_percentage": 0.15,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv4",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.938,
+            "execution_time": 0.5,
+            "power_consumption": 7.92,
+            "memory_consumption": 1228,
+            "utilization_percentage": 0.65,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv4",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.94,
+            "execution_time": 0.0625,
+            "power_consumption": 13.5,
+            "memory_consumption": 1331,
+            "utilization_percentage": 0.25,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv4",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.923,
+            "execution_time": 0.016,
+            "power_consumption": 29.8,
+            "memory_consumption": 1536,
+            "utilization_percentage": 0.105,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN1",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.032,
+            "power_consumption": 22.3,
+            "memory_consumption": 3747,
+            "utilization_percentage": 0.22,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN1",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.95,
+            "execution_time": 0.092,
+            "power_consumption": 9.8,
+            "memory_consumption": 4126,
+            "utilization_percentage": 0.75,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN1",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.95,
+            "execution_time": 0.065,
+            "power_consumption": 13.2,
+            "memory_consumption": 4321,
+            "utilization_percentage": 0.60,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN1",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.95,
+            "execution_time": 0.038,
+            "power_consumption": 32.5,
+            "memory_consumption": 3645,
+            "utilization_percentage": 0.45,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.933,
+            "execution_time": 0.03,
+            "power_consumption": 20.7,
+            "memory_consumption": 3307,
+            "utilization_percentage": 0.146,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.95,
+            "execution_time": 0.095,
+            "power_consumption": 9.5,
+            "memory_consumption": 3840,
+            "utilization_percentage": 0.7,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.909,
+            "execution_time": 0.068,
+            "power_consumption": 13.5,
+            "memory_consumption": 3194,
+            "utilization_percentage": 0.572,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.95,
+            "execution_time": 0.042,
+            "power_consumption": 30.3,
+            "memory_consumption": 3399,
+            "utilization_percentage": 0.504,
+            "niveau_id": "C"
+        }
+    ],
+    "CI": [
+        # Vehicle: 1 model (MobileNetV3-Small), 2 platforms (NANO, INTEL_I7)
+        {
+            "model_name_id": "MobileNetV3-Small",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.712,
+            "execution_time": 0.038,
+            "power_consumption": 6.2,
+            "memory_consumption": 47,
+            "utilization_percentage": 0.011,
+            "niveau_id": "V"
+        },
+        {
+            "model_name_id": "MobileNetV3-Small",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.71,
+            "execution_time": 0.015,
+            "power_consumption": 17.9,
+            "memory_consumption": 55,
+            "utilization_percentage": 0.008,
+            "niveau_id": "V"
+        },
+        # Edge: 2 models (EfficientNet-B0, ResNet-18), 3 platforms (NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "EfficientNet-B0",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.775,
+            "execution_time": 0.048,
+            "power_consumption": 6.8,
+            "memory_consumption": 73,
+            "utilization_percentage": 0.120,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "EfficientNet-B0",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.77,
+            "execution_time": 0.025,
+            "power_consumption": 8.4,
+            "memory_consumption": 77,
+            "utilization_percentage": 0.086,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "EfficientNet-B0",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.823,
+            "execution_time": 0.018,
+            "power_consumption": 19.3,
+            "memory_consumption": 67,
+            "utilization_percentage": 0.073,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "ResNet-18",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.81,
+            "execution_time": 0.045,
+            "power_consumption": 6.5,
+            "memory_consumption": 68,
+            "utilization_percentage": 0.18,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "ResNet-18",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.732,
+            "execution_time": 0.028,
+            "power_consumption": 8.2,
+            "memory_consumption": 77,
+            "utilization_percentage": 0.13,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "ResNet-18",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.761,
+            "execution_time": 0.022,
+            "power_consumption": 20.5,
+            "memory_consumption": 77,
+            "utilization_percentage": 0.085,
+            "niveau_id": "E"
+        },
+        # Cloud: 3 models (ResNet-50, EfficientNet-B4, ViT-Base), 4 platforms (AGX, NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "ResNet-50",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.903,
+            "execution_time": 0.025,
+            "power_consumption": 16.7,
+            "memory_consumption": 2293,
+            "utilization_percentage": 0.08,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ResNet-50",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.851,
+            "execution_time": 0.072,
+            "power_consumption": 8.8,
+            "memory_consumption": 2222,
+            "utilization_percentage": 0.65,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ResNet-50",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.9,
+            "execution_time": 0.042,
+            "power_consumption": 11.2,
+            "memory_consumption": 2170,
+            "utilization_percentage": 0.28,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ResNet-50",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.931,
+            "execution_time": 0.028,
+            "power_consumption": 26.8,
+            "memory_consumption": 2406,
+            "utilization_percentage": 0.384,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "EfficientNet-B4",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.82,
+            "execution_time": 0.022,
+            "power_consumption": 17.9,
+            "memory_consumption": 2007,
+            "utilization_percentage": 0.043,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "EfficientNet-B4",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.879,
+            "execution_time": 0.068,
+            "power_consumption": 8.5,
+            "memory_consumption": 2027,
+            "utilization_percentage": 0.281,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "EfficientNet-B4",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.862,
+            "execution_time": 0.045,
+            "power_consumption": 11.7,
+            "memory_consumption": 2120,
+            "utilization_percentage": 0.109,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "EfficientNet-B4",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.902,
+            "execution_time": 0.025,
+            "power_consumption": 25.4,
+            "memory_consumption": 1986,
+            "utilization_percentage": 0.109,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ViT-Base",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.028,
+            "power_consumption": 18.8,
+            "memory_consumption": 2999,
+            "utilization_percentage": 0.043,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ViT-Base",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.902,
+            "execution_time": 0.078,
+            "power_consumption": 9.3,
+            "memory_consumption": 2979,
+            "utilization_percentage": 0.301,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ViT-Base",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.901,
+            "execution_time": 0.052,
+            "power_consumption": 12.8,
+            "memory_consumption": 2447,
+            "utilization_percentage": 0.110,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ViT-Base",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.927,
+            "execution_time": 0.032,
+            "power_consumption": 28.2,
+            "memory_consumption": 3051,
+            "utilization_percentage": 0.125,
+            "niveau_id": "C"
+        }
+    ],
+    "S": [
+        # Vehicle: 1 model (MobileUnet), 2 platforms (NANO, INTEL_I7)
+        {
+            "model_name_id": "MobileUnet",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.683,
+            "execution_time": 0.045,
+            "power_consumption": 6.8,
+            "memory_consumption": 85,
+            "utilization_percentage": 0.09,
+            "niveau_id": "V"
+        },
+        {
+            "model_name_id": "MobileUnet",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.789,
+            "execution_time": 0.022,
+            "power_consumption": 19.9,
+            "memory_consumption": 75,
+            "utilization_percentage": 0.038,
+            "niveau_id": "V"
+        },
+        # Edge: 2 models (DeepLabV3-MobileNet, U-Net-Lite), 3 platforms (NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "DeepLabV3-MobileNet",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.824,
+            "execution_time": 0.065,
+            "power_consumption": 8.5,
+            "memory_consumption": 1505,
+            "utilization_percentage": 0.08,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "DeepLabV3-MobileNet",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.889,
+            "execution_time": 0.042,
+            "power_consumption": 10.8,
+            "memory_consumption": 1413,
+            "utilization_percentage": 0.042,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "DeepLabV3-MobileNet",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.826,
+            "execution_time": 0.028,
+            "power_consumption": 24.6,
+            "memory_consumption": 1392,
+            "utilization_percentage": 0.040,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "U-Net-Lite",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.856,
+            "execution_time": 0.068,
+            "power_consumption": 8.2,
+            "memory_consumption": 1454,
+            "utilization_percentage": 0.039,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "U-Net-Lite",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.903,
+            "execution_time": 0.038,
+            "power_consumption": 10.2,
+            "memory_consumption": 1249,
+            "utilization_percentage": 0.010,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "U-Net-Lite",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.873,
+            "execution_time": 0.025,
+            "power_consumption": 23.0,
+            "memory_consumption": 1280,
+            "utilization_percentage": 0.008,
+            "niveau_id": "E"
+        },
+        # Cloud: 3 models (DeepLabV3-ResNet, Mask R-CNN, SegFormer), 4 platforms (AGX, NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "DeepLabV3-ResNet",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.035,
+            "power_consumption": 21.9,
+            "memory_consumption": 3819,
+            "utilization_percentage": 0.15,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DeepLabV3-ResNet",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.871,
+            "execution_time": 0.085,
+            "power_consumption": 9.4,
+            "memory_consumption": 3020,
+            "utilization_percentage": 0.6,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DeepLabV3-ResNet",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.95,
+            "execution_time": 0.058,
+            "power_consumption": 13.8,
+            "memory_consumption": 3420,
+            "utilization_percentage": 0.357,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DeepLabV3-ResNet",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.95,
+            "execution_time": 0.038,
+            "power_consumption": 31.2,
+            "memory_consumption": 3317,
+            "utilization_percentage": 0.352,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN2",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.912,
+            "execution_time": 0.038,
+            "power_consumption": 22.0,
+            "memory_consumption": 3491,
+            "utilization_percentage": 0.25,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN2",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.95,
+            "execution_time": 0.092,
+            "power_consumption": 9.6,
+            "memory_consumption": 3921,
+            "utilization_percentage": 0.7,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN2",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.88,
+            "execution_time": 0.065,
+            "power_consumption": 14.2,
+            "memory_consumption": 3450,
+            "utilization_percentage": 0.60,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Mask R-CNN2",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.928,
+            "execution_time": 0.042,
+            "power_consumption": 29.2,
+            "memory_consumption": 3614,
+            "utilization_percentage": 0.55,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "SegFormer",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.032,
+            "power_consumption": 20.8,
+            "memory_consumption": 3051,
+            "utilization_percentage": 0.025,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "SegFormer",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.95,
+            "execution_time": 0.078,
+            "power_consumption": 8.9,
+            "memory_consumption": 3215,
+            "utilization_percentage": 0.379,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "SegFormer",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.95,
+            "execution_time": 0.052,
+            "power_consumption": 13.6,
+            "memory_consumption": 3010,
+            "utilization_percentage": 0.109,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "SegFormer",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.924,
+            "execution_time": 0.032,
+            "power_consumption": 27.3,
+            "memory_consumption": 2764,
+            "utilization_percentage": 0.113,
+            "niveau_id": "C"
+        }
+    ],
+    "OT": [
+        # Vehicle: 1 model (TinySORT), 2 platforms (NANO, INTEL_I7)
+        {
+            "model_name_id": "TinySORT",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.79,
+            "execution_time": 0.030,
+            "power_consumption": 5.8,
+            "memory_consumption": 55,
+            "utilization_percentage": 0.129,
+            "niveau_id": "V"
+        },
+        {
+            "model_name_id": "TinySORT",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.737,
+            "execution_time": 0.012,
+            "power_consumption": 16.1,
+            "memory_consumption": 46,
+            "utilization_percentage": 0.083,
+            "niveau_id": "V"
+        },
+        # Edge: 2 models (DeepSORT, FairMOT-Lite), 3 platforms (NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "DeepSORT",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.786,
+            "execution_time": 0.058,
+            "power_consumption": 7.2,
+            "memory_consumption": 1064,
+            "utilization_percentage": 0.357,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "DeepSORT",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.67,
+            "execution_time": 0.045,
+            "power_consumption": 9.8,
+            "memory_consumption": 1372,
+            "utilization_percentage": 0.156,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "DeepSORT",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.9,
+            "execution_time": 0.025,
+            "power_consumption": 22.5,
+            "memory_consumption": 1136,
+            "utilization_percentage": 0.150,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "FairMOT-Lite",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.827,
+            "execution_time": 0.052,
+            "power_consumption": 6.8,
+            "memory_consumption": 91,
+            "utilization_percentage": 0.311,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "FairMOT-Lite",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.744,
+            "execution_time": 0.032,
+            "power_consumption": 8.8,
+            "memory_consumption": 99,
+            "utilization_percentage": 0.130,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "FairMOT-Lite",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.794,
+            "execution_time": 0.022,
+            "power_consumption": 21.9,
+            "memory_consumption": 91,
+            "utilization_percentage": 0.124,
+            "niveau_id": "E"
+        },
+        # Cloud: 3 models (FairMOT, ByteTrack, OC-SORT), 4 platforms (AGX, NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "FairMOT",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.946,
+            "execution_time": 0.028,
+            "power_consumption": 18.4,
+            "memory_consumption": 2949,
+            "utilization_percentage": 0.085,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "FairMOT",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.855,
+            "execution_time": 0.075,
+            "power_consumption": 8.5,
+            "memory_consumption": 2856,
+            "utilization_percentage": 0.6,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "FairMOT",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.95,
+            "execution_time": 0.048,
+            "power_consumption": 12.0,
+            "memory_consumption": 2703,
+            "utilization_percentage": 0.361,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "FairMOT",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.923,
+            "execution_time": 0.032,
+            "power_consumption": 26.6,
+            "memory_consumption": 2652,
+            "utilization_percentage": 0.347,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ByteTrack",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.035,
+            "power_consumption": 19.7,
+            "memory_consumption": 3112,
+            "utilization_percentage": 0.031,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ByteTrack",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.881,
+            "execution_time": 0.082,
+            "power_consumption": 9.2,
+            "memory_consumption": 3368,
+            "utilization_percentage": 0.450,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ByteTrack",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.95,
+            "execution_time": 0.055,
+            "power_consumption": 13.9,
+            "memory_consumption": 3266,
+            "utilization_percentage": 0.150,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "ByteTrack",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.82,
+            "execution_time": 0.038,
+            "power_consumption": 28.1,
+            "memory_consumption": 3502,
+            "utilization_percentage": 0.129,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "OC-SORT",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.95,
+            "execution_time": 0.032,
+            "power_consumption": 18.3,
+            "memory_consumption": 2754,
+            "utilization_percentage": 0.028,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "OC-SORT",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.874,
+            "execution_time": 0.078,
+            "power_consumption": 8.8,
+            "memory_consumption": 2764,
+            "utilization_percentage": 0.441,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "OC-SORT",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.855,
+            "execution_time": 0.052,
+            "power_consumption": 12.5,
+            "memory_consumption": 2590,
+            "utilization_percentage": 0.170,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "OC-SORT",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.95,
+            "execution_time": 0.032,
+            "power_consumption": 25.9,
+            "memory_consumption": 2508,
+            "utilization_percentage": 0.181,
+            "niveau_id": "C"
+        }
+    ],
+    "TLD": [
+        # Vehicle: 1 model (YOLOv3-Tiny-TLD), 2 platforms (NANO, INTEL_I7)
+        {
+            "model_name_id": "YOLOv3-Tiny-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.609,
+            "execution_time": 0.035,
+            "power_consumption": 6.1,
+            "memory_consumption": 84,
+            "utilization_percentage": 0.109,
+            "niveau_id": "V"
+        },
+        {
+            "model_name_id": "YOLOv3-Tiny-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.734,
+            "execution_time": 0.016,
+            "power_consumption": 17.8,
+            "memory_consumption": 56,
+            "utilization_percentage": 0.082,
+            "niveau_id": "V"
+        },
+        # Edge: 2 models (YOLOv5s-TLD, SSD-MobileNet-TLD), 3 platforms (NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "YOLOv5s-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.796,
+            "execution_time": 0.062,
+            "power_consumption": 7.8,
+            "memory_consumption": 1361,
+            "utilization_percentage": 0.382,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "YOLOv5s-TLD",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.889,
+            "execution_time": 0.038,
+            "power_consumption": 10.8,
+            "memory_consumption": 1249,
+            "utilization_percentage": 0.184,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "YOLOv5s-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.868,
+            "execution_time": 0.025,
+            "power_consumption": 22.7,
+            "memory_consumption": 1259,
+            "utilization_percentage": 0.180,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-MobileNet-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.853,
+            "execution_time": 0.055,
+            "power_consumption": 7.2,
+            "memory_consumption": 1044,
+            "utilization_percentage": 0.024,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-MobileNet-TLD",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.796,
+            "execution_time": 0.035,
+            "power_consumption": 8.5,
+            "memory_consumption": 1054,
+            "utilization_percentage": 0.006,
+            "niveau_id": "E"
+        },
+        {
+            "model_name_id": "SSD-MobileNet-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.811,
+            "execution_time": 0.022,
+            "power_consumption": 21.8,
+            "memory_consumption": 1075,
+            "utilization_percentage": 0.007,
+            "niveau_id": "E"
+        },
+        # Cloud: 3 models (YOLOv7-TLD, Faster R-CNN-TLD, DETR-TLD), 4 platforms (AGX, NANO, TX2, INTEL_I7)
+        {
+            "model_name_id": "YOLOv7-TLD",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.94,
+            "execution_time": 0.02,
+            "power_consumption": 22.1,
+            "memory_consumption": 2764,
+            "utilization_percentage": 0.25,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv7-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.88,
+            "execution_time": 0.15,
+            "power_consumption": 9.8,
+            "memory_consumption": 2867,
+            "utilization_percentage": 0.75,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv7-TLD",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.9,
+            "execution_time": 0.07,
+            "power_consumption": 13.5,
+            "memory_consumption": 2969,
+            "utilization_percentage": 0.55,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "YOLOv7-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.93,
+            "execution_time": 0.035,
+            "power_consumption": 30.2,
+            "memory_consumption": 2662,
+            "utilization_percentage": 0.45,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Faster R-CNN-TLD",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.871,
+            "execution_time": 0.042,
+            "power_consumption": 22.2,
+            "memory_consumption": 3830,
+            "utilization_percentage": 0.102,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Faster R-CNN-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.95,
+            "execution_time": 0.095,
+            "power_consumption": 9.8,
+            "memory_consumption": 3727,
+            "utilization_percentage": 0.75,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Faster R-CNN-TLD",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.882,
+            "execution_time": 0.062,
+            "power_consumption": 14.1,
+            "memory_consumption": 3225,
+            "utilization_percentage": 0.665,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "Faster R-CNN-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.93,
+            "execution_time": 0.038,
+            "power_consumption": 31.5,
+            "memory_consumption": 3235,
+            "utilization_percentage": 0.647,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR-TLD",
+            "hardware_name_id": "AGX",
+            "accuracy": 0.892,
+            "execution_time": 0.038,
+            "power_consumption": 21.7,
+            "memory_consumption": 3092,
+            "utilization_percentage": 0.026,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR-TLD",
+            "hardware_name_id": "NANO",
+            "accuracy": 0.864,
+            "execution_time": 0.088,
+            "power_consumption": 9.2,
+            "memory_consumption": 2980,
+            "utilization_percentage": 0.7,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR-TLD",
+            "hardware_name_id": "TX2",
+            "accuracy": 0.899,
+            "execution_time": 0.058,
+            "power_consumption": 13.5,
+            "memory_consumption": 2959,
+            "utilization_percentage": 0.640,
+            "niveau_id": "C"
+        },
+        {
+            "model_name_id": "DETR-TLD",
+            "hardware_name_id": "INTEL_I7",
+            "accuracy": 0.938,
+            "execution_time": 0.042,
+            "power_consumption": 29.0,
+            "memory_consumption": 3194,
+            "utilization_percentage": 0.524,
+            "niveau_id": "C"
+        }
+    ]
+}
+

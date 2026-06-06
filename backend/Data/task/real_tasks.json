@@ -1,0 +1,20 @@
+[
+    {
+        "name": "ObjectDetection",
+        "processing_units": 4,
+        "power_efficiency": 0.4,
+        "execution_time": 0.1,
+        "processing_platform_usage": 0.7,
+        "memory_size": 400,
+        "memory_cache": 1
+    },
+    {
+        "name": "ObjectSegmentation",
+        "processing_units": 6,
+        "power_efficiency": 0.5,
+        "execution_time": 0.1,
+        "processing_platform_usage": 0.8,
+        "memory_size": 600,
+        "memory_cache": 2
+    }
+]

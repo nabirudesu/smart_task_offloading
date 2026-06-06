@@ -1,0 +1,28 @@
+# backend/requirements.txt
+Flask==2.3.3
+Flask-CORS==4.0.0
+Flask-SocketIO==5.3.6
+python-socketio==5.9.0
+requests==2.31.0
+
+
+
+# Core simulation dependencies
+simpy
+numpy
+pandas
+
+# Visualization and mapping
+folium
+
+# ML and RL dependencies
+ray[rllib]==2.30.0
+tensorflow==2.15.0
+stable-baselines3
+gymnasium
+
+# Data processing
+xgboost
+
+# Additional utilities
+haversine

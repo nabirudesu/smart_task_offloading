@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Task1-CPU-Intensive",
+        "processing_units": 4,
+        "power_efficiency": 0.4,
+        "execution_time": 15,
+        "processing_platform_usage": 0.7,
+        "memory_size": 400,
+        "memory_cache": 1
+    },
+    {
+        "name": "Task2-Memory-Intensive",
+        "processing_units": 2,
+        "power_efficiency": 0.3,
+        "execution_time": 12,
+        "processing_platform_usage": 0.5,
+        "memory_size": 18e9,
+        "memory_cache": 4
+    },
+    {
+        "name": "Task3-Cache-Intensive",
+        "processing_units": 3,
+        "power_efficiency": 0.5,
+        "execution_time": 18,
+        "processing_platform_usage": 0.6,
+        "memory_size": 800,
+        "memory_cache": 8
+    },
+    {
+        "name": "Task4-Balanced",
+        "processing_units": 3,
+        "power_efficiency": 0.4,
+        "execution_time": 10,
+        "processing_platform_usage": 0.5,
+        "memory_size": 1200,
+        "memory_cache": 3
+    },
+    {
+        "name": "Task5-GPU-Suitable",
+        "processing_units": 180,
+        "power_efficiency": 0.6,
+        "execution_time": 14,
+        "processing_platform_usage": 0.8,
+        "memory_size": 6000,
+        "memory_cache": 10
+    },
+    {
+        "name": "Task6-NPU-Suitable",
+        "processing_units": 100,
+        "power_efficiency": 0.8,
+        "execution_time": 16,
+        "processing_platform_usage": 0.7,
+        "memory_size": 20000,
+        "memory_cache": 20
+    },
+    {
+        "name": "Task7-TPU-Suitable",
+        "processing_units": 400,
+        "power_efficiency": 0.85,
+        "execution_time": 20,
+        "processing_platform_usage": 0.9,
+        "memory_size": 40000,
+        "memory_cache": 40
+    },
+    {
+        "name": "Task8-Small",
+        "processing_units": 1,
+        "power_efficiency": 0.2,
+        "execution_time": 5,
+        "processing_platform_usage": 0.3,
+        "memory_size": 200,
+        "memory_cache": 1
+    }
+]

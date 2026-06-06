@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: ad_sim_backend
+    ports:
+      - '5001:5001'
+    environment:
+      - PORT=5001
+      - FRONTEND_ORIGIN=http://localhost:3000
+    volumes:
+      - ./backend/simulation_output:/app/backend/simulation_output
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: ad_sim_frontend
+    ports:
+      - '3000:80'

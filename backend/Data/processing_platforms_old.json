@@ -1,0 +1,112 @@
+{
+    "vehicle": {
+        "cpu": {
+            "name": "NVIDIA Carmel (Tegra Xavier)",
+            "peak_flops": 1e9,
+            "processing_frequency": 2.26e9,
+            "processing_units": 8,
+            "ram_size": 8e9,
+            "memory_size": 16e9,
+            "memory_bandwidth": 137e9,
+            "memory_cache": 4e6,
+            "power_efficiency": 0.5,
+            "ISA": "ARMv8.2"
+        },
+        "gpu": {
+            "name": "NVIDIA Volta (Jetson AGX Xavier)",
+            "peak_flops": 10e12,
+            "processing_frequency": 1.37e9,
+            "processing_units": 512,
+            "ram_size": 8e9,
+            "memory_size": 16e9,
+            "memory_bandwidth": 137e9,
+            "memory_cache": 8e6,
+            "power_efficiency": 0.7
+        }
+    },
+    "fog": {
+        "cpu": {
+            "name": "Intel Xeon D-2183IT",
+            "peak_flops": 4e9,
+            "processing_frequency": 2.2e9,
+            "processing_units": 16,
+            "ram_size": 8e9,
+            "memory_size": 64e9,
+            "memory_bandwidth": 102e9,
+            "memory_cache": 8e6,
+            "power_efficiency": 0.6,
+            "ISA": "x86-64"
+        },
+        "gpu": {
+            "name": "NVIDIA A100 (Tensor Core)",
+            "peak_flops": 19.5e12,
+            "processing_frequency": 1.41e9,
+            "processing_units": 6912,
+            "ram_size": 8e9,
+            "memory_size": 40e9,
+            "memory_bandwidth": 1555e9,
+            "memory_cache": 40e6,
+            "power_efficiency": 0.75
+        },
+        "npu": {
+            "name": "Google Edge TPU",
+            "peak_flops": 4e12,
+            "processing_frequency": 0.7e9,
+            "processing_units": 256,
+            "ram_size": 8e9,
+            "memory_size": 8e9,
+            "memory_bandwidth": 500e9,
+            "memory_cache": 16e6,
+            "power_efficiency": 0.85,
+            "AI_accelerator_units": 64
+        }
+    },
+    "cloud": {
+        "cpu": {
+            "name": "AMD EPYC 7742",
+            "peak_flops": 12e9,
+            "processing_frequency": 3.4e9,
+            "processing_units": 64,
+            "ram_size": 8e9,
+            "memory_size": 512e9,
+            "memory_bandwidth": 204e9,
+            "memory_cache": 32e6,
+            "power_efficiency": 0.7,
+            "ISA": "x86-64"
+        },
+        "gpu": {
+            "name": "NVIDIA H100",
+            "peak_flops": 60e12,
+            "processing_frequency": 1.9e9,
+            "processing_units": 16896,
+            "ram_size": 8e9,
+            "memory_size": 80e9,
+            "memory_bandwidth": 2000e9,
+            "memory_cache": 50e6,
+            "power_efficiency": 0.8
+        },
+        "npu": {
+            "name": "Google TPU v4",
+            "peak_flops": 275e12,
+            "processing_frequency": 2.0e9,
+            "processing_units": 4096,
+            "ram_size": 8e9,
+            "memory_size": 128e9,
+            "memory_bandwidth": 3200e9,
+            "memory_cache": 128e6,
+            "power_efficiency": 0.9,
+            "AI_accelerator_units": 512
+        },
+        "tpu": {
+            "name": "Google TPU v5",
+            "peak_flops": 400e12,
+            "processing_frequency": 2.2e9,
+            "processing_units": 8192,
+            "ram_size": 8e9,
+            "memory_size": 256e9,
+            "memory_bandwidth": 6400e9,
+            "memory_cache": 256e6,
+            "power_efficiency": 0.95
+        }
+    }
+}

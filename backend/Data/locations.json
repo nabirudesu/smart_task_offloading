@@ -1,0 +1,17 @@
+[
+    {"city": "Alger", "latitude": 36.7578, "longitude": 3.05775},
+    {"city": "Lille", "latitude": 50.631583072533594, "longitude": 3.057713469569928},
+    {"city": "Paris", "latitude": 48.857234818870474, "longitude": 2.3405088720080602},
+    {"city": "Bordeaux", "latitude": 44.83911345093876, "longitude": -0.5775176280843897},
+    {"city": "Shangai", "latitude": 31.230416666666666, "longitude": 121.47222222222222},
+    {"city": "Los Angeles", "latitude": 34.05222222222222, "longitude": -118.24277777777777},
+    {"city": "Tokyo", "latitude": 35.6894875, "longitude": 139.6917064},
+    {"city": "Rennes", "latitude": 48.110825, "longitude": -1.678152},
+    {"city": "Lyon", "latitude": 45.764043, "longitude": 4.835658},
+    {"city": "London", "latitude": 51.509865, "longitude": -0.118092},
+    {"city": "New York", "latitude": 40.7127837, "longitude": -74.0059413},
+    {"city": "Moscow", "latitude": 55.755826, "longitude": 37.617298},
+    {"city": "Rome", "latitude": 41.9027835, "longitude": 12.4963655},
+    {"city": "Kigali", "latitude": -1.9484010053997387, "longitude": 30.0953033638107},
+    {"city": "Marrakech", "latitude": 31.62949, "longitude": -7.984659}
+]
