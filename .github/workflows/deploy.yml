@@ -22,12 +22,23 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Build and push Docker image
+      - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ad_sim:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ad_sim-backend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: frontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/ad_sim-frontend:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
       
@@ -36,11 +47,14 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT || 22 }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          port: 22
           script: |
             cd /app/ad_sim
-            docker pull ${{ secrets.DOCKER_USERNAME }}/ad_sim:latest
+            export BACKEND_IMAGE=${{ secrets.DOCKER_USERNAME }}/ad_sim-backend:latest
+            export FRONTEND_IMAGE=${{ secrets.DOCKER_USERNAME }}/ad_sim-frontend:latest
+            export FRONTEND_ORIGIN=http://${{ secrets.VPS_HOST }}:3000
+            docker compose pull
             docker compose down
             docker compose up -d
             docker compose logs -f --tail=20
