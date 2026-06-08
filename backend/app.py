@@ -18,9 +18,48 @@ from config_data import SIMULATION_CONFIGS
 from integrated_simulation import SimulationManager
 from entities.servers.offloading_algorithme import PPOModel
 app = Flask(__name__)
-FRONTEND_ORIGIN = os.environ.get("FRONTEND_ORIGIN", "http://localhost:3000")
-CORS(app, origins=[FRONTEND_ORIGIN])
-socketio = SocketIO(app, cors_allowed_origins=FRONTEND_ORIGIN, async_mode='threading')
+
+def get_allowed_origins():
+    """Dynamically get allowed origins based on environment and request headers.
+    
+    Works across any deployment:
+    - Local development: http://localhost:3000
+    - VPS deployment: Extracts host from X-Forwarded-Host header (set by nginx proxy)
+    - Cloud deployment: Works with any reverse proxy that sets forwarded headers
+    """
+    allowed = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost",
+        "http://127.0.0.1"
+    ]
+    
+    # Get the host from X-Forwarded-Host header (set by nginx/reverse proxy)
+    forwarded_host = request.headers.get('X-Forwarded-Host')
+    forwarded_proto = request.headers.get('X-Forwarded-Proto', 'http')
+    
+    if forwarded_host:
+        allowed.append(f"{forwarded_proto}://{forwarded_host}")
+    
+    return allowed
+
+def validate_socket_origin(origin):
+    """Validate SocketIO origin dynamically based on request context."""
+    allowed = get_allowed_origins()
+    is_valid = origin in allowed
+    if not is_valid:
+        print(f"[SOCKETIO] Origin validation: {origin} - Allowed: {allowed}")
+    return is_valid
+
+# Apply CORS with dynamic origin validation
+CORS(app, origins=get_allowed_origins)
+
+# SocketIO with dynamic origin validation
+socketio = SocketIO(
+    app, 
+    cors_allowed_origins=validate_socket_origin,
+    async_mode='threading'
+)
 
 # Global simulation manager with real simulation integration
 simulation_manager = SimulationManager(socketio)
