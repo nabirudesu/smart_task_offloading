@@ -22,9 +22,13 @@ function UpdatedApp() {
     const [showSimulation, setShowSimulation] = useState(false); // New state for layout control
     const [simPyTime, setSimPyTime] = useState(0.0); // New state for SimPy time
 
+    // Use same-origin relative URLs so the browser talks to this frontend
+    // (nginx will proxy API and WebSocket requests to the backend service).
+    const apiBase = '';
+
     useEffect(() => {
         // Initialize WebSocket connection
-        const newSocket = io('http://localhost:5001', {
+        const newSocket = io({
             transports: ['websocket', 'polling']
         });
 
@@ -100,7 +104,7 @@ function UpdatedApp() {
 
     const fetchConfigOptions = async () => {
         try {
-            const response = await fetch('http://localhost:5001/api/config/options');
+            const response = await fetch(`${apiBase}/api/config/options`);
             const options = await response.json();
             console.log('Configuration options loaded:', options);
             setConfigOptions(options);
@@ -114,7 +118,7 @@ function UpdatedApp() {
             setSimulationStatus('starting');
             console.log('Starting updated simulation with config:', config);
 
-            const response = await fetch('http://localhost:5001/api/simulation/start', {
+            const response = await fetch(`${apiBase}/api/simulation/start`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -145,7 +149,7 @@ function UpdatedApp() {
     const handleStopSimulation = async () => {
         try {
             console.log('Stopping simulation...');
-            const response = await fetch('http://localhost:5001/api/simulation/stop', {
+            const response = await fetch(`${apiBase}/api/simulation/stop`, {
                 method: 'POST',
             });
 
@@ -172,7 +176,7 @@ function UpdatedApp() {
         }
 
         try {
-            const response = await fetch(`http://localhost:5001/api/simulation/export/${simulationId}`);
+            const response = await fetch(`${apiBase}/api/simulation/export/${simulationId}`);
             if (response.ok) {
                 const exportInfo = await response.json();
                 console.log('Export data available:', exportInfo);
