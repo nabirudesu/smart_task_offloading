@@ -364,7 +364,7 @@ class CustomPPOModel(TFModelV2):
 # Training script
 def train_ppo():
     # Clean up Ray temporary directory to avoid conflicts
-    ray_temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp", "ray")
+    ray_temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp", "ray") if os.name == "nt" else os.path.join("/tmp", "ray")
     if os.path.exists(ray_temp_dir):
         try:
             shutil.rmtree(ray_temp_dir)
@@ -439,7 +439,7 @@ def train_ppo():
 # Inference script
 def run_inference(checkpoint_path):
     # Clean up Ray temporary directory
-    ray_temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp", "ray")
+    ray_temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp", "ray") if os.name == "nt" else os.path.join("/tmp", "ray")
     if os.path.exists(ray_temp_dir):
         try:
             print(f"Cleared Ray temporary directory: {ray_temp_dir}")

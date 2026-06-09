@@ -201,7 +201,7 @@ class PPOModel(OffloaingAlgorithme):
                 config, "/tmp/ray_results"
             ),  # Replace with your logdir if needed
         }
-        self.checkpoint_path = "/Users/kyorakuna/Desktop/New folder/ad_sim/backend/final_model"  # Update with actual path
+        self.checkpoint_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "final_model")
         self.model = self._load_rl_model()
 
     def _load_rl_model(self):

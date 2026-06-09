@@ -2,6 +2,9 @@
 
 import os
 import simpy
+
+_BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+_DATA_DIR = os.path.join(_BACKEND_DIR, "Data")
 import numpy as np
 import json
 import time
@@ -120,10 +123,10 @@ class EdgeComputingSimulation:
         print("[SETUP] Creating cloud server...")
 
         # Load cloud processing platforms
-        cloud_platforms = load_processing_platforms("/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/processing_platforms.json", "C", self.env)
+        cloud_platforms = load_processing_platforms(os.path.join(_DATA_DIR, "processing_platforms.json"), "C", self.env)
 
         # Load cloud DNN models
-        cloud_models = load_dnn_models("/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/dnn_models.json", "C")
+        cloud_models = load_dnn_models(os.path.join(_DATA_DIR, "dnn_models.json"), "C")
 
         # Create cloud server
         cloud_server = CloudServer(
@@ -154,8 +157,8 @@ class EdgeComputingSimulation:
         edge_servers = []
 
         # Create edge server at Paris center
-        edge_platforms = load_processing_platforms("/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/processing_platforms.json", "E", self.env)
-        edge_models = load_dnn_models("/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/dnn_models.json", "E")
+        edge_platforms = load_processing_platforms(os.path.join(_DATA_DIR, "processing_platforms.json"), "E", self.env)
+        edge_models = load_dnn_models(os.path.join(_DATA_DIR, "dnn_models.json"), "E")
         print("number of edge servers",self.NUM_EDGE_SERVERS)
         print("number of edge positions",len(self.EDGE_POSITION))
         for i in range(self.NUM_EDGE_SERVERS):
@@ -223,9 +226,9 @@ class EdgeComputingSimulation:
 
             # Load vehicle processing platforms and models
             vehicle_platforms = load_processing_platforms(
-                "/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/processing_platforms.json", "V", self.env
+                os.path.join(_DATA_DIR, "processing_platforms.json"), "V", self.env
             )
-            vehicle_models = load_dnn_models("/Users/kyorakuna/Desktop/New folder/ad_sim/backend/Data/dnn_models.json", "V")
+            vehicle_models = load_dnn_models(os.path.join(_DATA_DIR, "dnn_models.json"), "V")
 
             # Create edge servers dictionary for vehicle
             edge_servers_dict = {str(edge.id): edge for edge in self.edge_servers}
