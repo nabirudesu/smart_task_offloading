@@ -19,46 +19,29 @@ from integrated_simulation import SimulationManager
 from entities.servers.offloading_algorithme import PPOModel
 app = Flask(__name__)
 
-def get_allowed_origins():
-    """Dynamically get allowed origins based on environment and request headers.
+def validate_socket_origin(origin, environ=None):
+    """Validate socket.io origins by checking environ headers directly (no Flask request context needed)"""
+    # Check if behind proxy by looking at environ headers directly
+    forwarded_for = environ.get('HTTP_X_FORWARDED_FOR') if environ else None
+    forwarded_proto = environ.get('HTTP_X_FORWARDED_PROTO') if environ else None
     
-    Works across any deployment:
-    - Local development: http://localhost:3000
-    - VPS deployment: Extracts host from X-Forwarded-Host header (set by nginx proxy)
-    - Cloud deployment: Works with any reverse proxy that sets forwarded headers
-    """
-    allowed = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost",
-        "http://127.0.0.1"
-    ]
+    # If behind proxy (nginx), accept any origin - no validation needed
+    if forwarded_for or forwarded_proto:
+        return True
     
-    # Get the host from X-Forwarded-Host header (set by nginx/reverse proxy)
-    forwarded_host = request.headers.get('X-Forwarded-Host')
-    forwarded_proto = request.headers.get('X-Forwarded-Proto', 'http')
-    
-    if forwarded_host:
-        allowed.append(f"{forwarded_proto}://{forwarded_host}")
-    
-    return allowed
+    # Local dev only - restrict to localhost
+    return origin in ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost', 'http://127.0.0.1']
 
-def validate_socket_origin(origin):
-    """Validate SocketIO origin dynamically based on request context."""
-    allowed = get_allowed_origins()
-    is_valid = origin in allowed
-    if not is_valid:
-        print(f"[SOCKETIO] Origin validation: {origin} - Allowed: {allowed}")
-    return is_valid
+# CORS: Accept any origin (nginx will handle access control)
+CORS(app, origins=['*'], supports_credentials=True)
 
-# Apply CORS with dynamic origin validation
-CORS(app, origins=get_allowed_origins)
-
-# SocketIO with dynamic origin validation
+# SocketIO with environ-based validation
 socketio = SocketIO(
     app, 
     cors_allowed_origins=validate_socket_origin,
-    async_mode='threading'
+    async_mode='threading',
+    ping_timeout=10,
+    ping_interval=5
 )
 
 # Global simulation manager with real simulation integration
