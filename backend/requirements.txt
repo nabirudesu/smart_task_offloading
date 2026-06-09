@@ -18,7 +18,7 @@ folium
 # ML and RL dependencies
 ray[rllib]==2.30.0
 tensorflow==2.15.0
-stable-baselines3
+matplotlib
 gymnasium
 
 # Data processing

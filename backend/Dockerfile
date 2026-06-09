@@ -11,8 +11,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app/backend
 
 COPY backend/requirements.txt ./
-RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements.txt
 
 COPY backend /app/backend
 
